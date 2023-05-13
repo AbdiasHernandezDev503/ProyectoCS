@@ -8,5 +8,14 @@ namespace HospitalMatasanos.EntidadesDeNegocio
 {
     public class Tratamiento
     {
+        public int IdTratamiento { get; set; }  
+        public string NombreTratamiento { get; set; }
+        public string Dosis { get; set; }
+        public int DuracionSemanas { get; set; }    
+        public DateTime FechaInicio { get; set; }
+        public DateTime FechaFin { get; set; }
+
+        public string IdEffectSecnundTto { get; set; } 
+        public string IdPerHospTto { get; set; }
     }
 }

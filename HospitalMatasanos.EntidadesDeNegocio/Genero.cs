@@ -8,5 +8,7 @@ namespace HospitalMatasanos.EntidadesDeNegocio
 {
     public class Genero
     {
+        public string IdGenero { get; set; }
+        public string NombreGenero { get; set; }
     }
 }

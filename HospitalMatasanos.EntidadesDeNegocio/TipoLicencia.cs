@@ -8,5 +8,7 @@ namespace HospitalMatasanos.EntidadesDeNegocio
 {
     public class TipoLicencia
     {
+        public string IdTLicencia { get; set; } 
+        public string TipoDeLicencia { get; set; }
     }
 }

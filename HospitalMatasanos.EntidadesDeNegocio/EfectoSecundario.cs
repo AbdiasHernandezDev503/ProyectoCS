@@ -8,5 +8,7 @@ namespace HospitalMatasanos.EntidadesDeNegocio
 {
     public class EfectoSecundario
     {
+        public int IdEfectoSecundario { get; set; } 
+        public string NombreEfectoSecundario { get; set; }
     }
 }
