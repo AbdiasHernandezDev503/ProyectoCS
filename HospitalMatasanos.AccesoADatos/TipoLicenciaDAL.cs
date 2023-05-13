@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HospitalMatasanos.AccesoADatos
 {
-    public class Class1
+    public class TipoLicenciaDAL
     {
     }
 }
