@@ -23,5 +23,21 @@ namespace HospitalMatasanos.LogicaDeNegocio
         {
             return DepartamentoDAL.Eliminar(pDepartamento);
         }
+        public static List<Departamento> ObtenerTodos()
+        {
+            return DepartamentoDAL.ObtenerTodos();
+        }
+        public static Departamento BuscarPorId(byte pId)
+        {
+            return DepartamentoDAL.BuscarPorId(pId);
+        }
+        public static List<Departamento> ObtnerHabilitados()
+        {
+            return DepartamentoDAL.ObtenerHabilitados();
+        }
+        public static List<Departamento> Buscar(Departamento pDepartamento)
+        {
+            return DepartamentoDAL.Buscar(pDepartamento);
+        }
     }
 }

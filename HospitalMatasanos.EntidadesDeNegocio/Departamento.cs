@@ -8,7 +8,7 @@ namespace HospitalMatasanos.EntidadesDeNegocio
 {
     public class Departamento
     {
-        public string IdDepartamento { get; set; }  
-        public string NombreDepartamento { get; set; }
+        public int Id { get; set; }  
+        public string nombre { get; set; }
     }
 }
