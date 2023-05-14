@@ -15,7 +15,7 @@ namespace HospitalMatasanos.EntidadesDeNegocio
         public DateTime FechaInicio { get; set; }
         public DateTime FechaFin { get; set; }
 
-        public string IdEffectSecnundTto { get; set; } 
-        public string IdPerHospTto { get; set; }
+        public int IdEffectSecnundTto { get; set; } 
+        public int IdPerHospTto { get; set; }
     }
 }
