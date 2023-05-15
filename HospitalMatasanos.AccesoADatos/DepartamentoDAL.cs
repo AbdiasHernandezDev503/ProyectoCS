@@ -56,7 +56,7 @@ namespace HospitalMatasanos.AccesoADatos
             return ListaDepartamentos; ;
         }
 
-        public static Departamento BuscarPorId(Byte pId)
+        public static Departamento BuscarPorId(int pId)
         {
             string consulta = "SELECT d.Id, d.Nombre FROM Departamento d WHERE Id= @Id";
             SqlCommand comando = ComunDB.ObtenerComando();

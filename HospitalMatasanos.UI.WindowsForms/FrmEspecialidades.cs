@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HospitalMatasanos.LogicaDeNegocio;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,26 +8,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
 using HospitalMatasanos.EntidadesDeNegocio;
 using HospitalMatasanos.LogicaDeNegocio;
 using HospitalMatasanos.UI.WindowsForms.Util;
+
 namespace HospitalMatasanos.UI.WindowsForms
 {
-    public partial class FrmDepartamento : Form
+    public partial class FrmEspecialidades : Form
     {
-        Departamento departamento = new Departamento();
-        public int Id = 0;
-
-        public byte IdDepartamento { get; private set; }
-
-        public FrmDepartamento()
+        Especialidad especialidad = new Especialidad();
+        public int Id = 0; 
+        public FrmEspecialidades()
         {
             InitializeComponent();
         }
-        private void frmDepartamento_Load(object sender, EventArgs e)
+
+        private void FrmEspecialidades_Load(object sender, EventArgs e)
         {
-           
             if (Id > 0)
             {
                 CargarDatos();
@@ -34,10 +32,10 @@ namespace HospitalMatasanos.UI.WindowsForms
         }
         private void CargarDatos()
         {
-            departamento = DepartamentoBL.BuscarPorId(Id);
-            if (departamento.Id > 0)
+            especialidad = EspecialidadBL.BuscarPorId(Id);
+            if (especialidad.Id > 0)
             {
-                txtNombre.Text = departamento.nombre;
+                txtNombre.Text = especialidad.Nombre;
             }
             else
             {
@@ -45,13 +43,12 @@ namespace HospitalMatasanos.UI.WindowsForms
                 this.Close();
             }
         }
-
         private bool ValidarDatosFormulario()
         {
             bool validar = false;
             if (txtNombre.Text.Trim().Equals(""))
             {
-                MessageBox.Show("Nombre Departamento, es obligatorio");
+                MessageBox.Show("Nombre Especialidad, es obligatorio");
                 validar = true;
             }
             return validar;
@@ -62,10 +59,10 @@ namespace HospitalMatasanos.UI.WindowsForms
             {
                 if (!ValidarDatosFormulario())
                 {
-                    departamento.nombre = txtNombre.Text;
+                    especialidad.Nombre = txtNombre.Text;
                     if (Id <= 0)
                     {
-                        if (DepartamentoBL.Guardar(departamento) > 0)
+                        if (EspecialidadBL.Guardar(especialidad) > 0)
                         {
                             MessageBox.Show("Registro exitoso");
                             this.Close();
@@ -73,7 +70,7 @@ namespace HospitalMatasanos.UI.WindowsForms
                     }
                     else
                     {
-                        if (DepartamentoBL.Modificar(departamento) > 0)
+                        if (EspecialidadBL.Modificar(especialidad) > 0)
                         {
                             MessageBox.Show("Registro exitoso");
                             this.Close();
@@ -82,18 +79,17 @@ namespace HospitalMatasanos.UI.WindowsForms
                 }
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                MessageBox.Show("Ocurrio un al intentar guardar");
+               MessageBox.Show("Ocurrio el siguinte error al guardar" + ex);
             }
         }
-
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             Guardar();
         }
 
-        private void btnCancelar_Click(object sender, EventArgs e)
+        private void btnEliminar_Click(object sender, EventArgs e)
         {
             this.Close();
         }

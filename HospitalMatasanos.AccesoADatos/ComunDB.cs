@@ -10,9 +10,9 @@ namespace HospitalMatasanos.AccesoADatos
 {
     public class ComunDB
     {
-         const string StrConexion = @"Data Source=LAPTOP-CN5T4MQA\SQLEXPRESS;Initial Catalog=BD_HOSPITAL_MATASANOS;Integrated Security=True";
+        // const string StrConexion = @"Data Source=LAPTOP-CN5T4MQA\SQLEXPRESS;Initial Catalog=BD_HOSPITAL_MATASANOS;Integrated Security=True";
 
-        //const string StrConexion = @"Data Source=DESKTOP-R0RFR5B;Initial Catalog=BD_HOSPITAL_MATASANOS;Integrated Security=True";
+        const string StrConexion = @"Data Source=DESKTOP-R0RFR5B;Initial Catalog=BD_HOSPITAL_MATASANOS;Integrated Security=True";
         private static SqlConnection ObtenerConexion()
         {
             SqlConnection connection = new SqlConnection(StrConexion);

@@ -22,5 +22,21 @@ namespace HospitalMatasanos.LogicaDeNegocio
         {
             return EspecialidadDAL.Eliminar(pEspecialidad);
         }
+        public static List<Especialidad> ObtenerTodos()
+        {
+            return EspecialidadDAL.ObtenerTodos();
+        }
+        public static Especialidad BuscarPorId(int pId)
+        {
+            return EspecialidadDAL.BuscarPorId(pId);
+        }
+        public static List<Especialidad> ObtnerHabilitados()
+        {
+            return EspecialidadDAL.ObtenerHabilitados();
+        }
+        public static List<Especialidad> Buscar(Especialidad pEspecialidad)
+        {
+            return EspecialidadDAL.Buscar(pEspecialidad);
+        }
     }
 }

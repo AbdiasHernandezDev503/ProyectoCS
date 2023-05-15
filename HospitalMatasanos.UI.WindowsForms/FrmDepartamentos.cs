@@ -16,6 +16,8 @@ namespace HospitalMatasanos.UI.WindowsForms
 {
     public partial class FrmDepartamentos : Form
     {
+        Departamento departamento = new Departamento();
+        public int Id = 0;
         public FrmDepartamentos()
         {
             InitializeComponent();
@@ -48,7 +50,7 @@ namespace HospitalMatasanos.UI.WindowsForms
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            byte Id = (Byte)UFormulario.ObtenerIdGrid(dgvDepartamento);
+            int Id = (int)UFormulario.ObtenerIdGrid(dgvDepartamento);
             if (Id > 0)
             {
                 FrmDepartamento frmDepartamento = new FrmDepartamento();
@@ -66,7 +68,7 @@ namespace HospitalMatasanos.UI.WindowsForms
 
         private void btnElimar_Click(object sender, EventArgs e)
         {
-            byte Id = (Byte)UFormulario.ObtenerIdGrid(dgvDepartamento);
+            int Id = (int)UFormulario.ObtenerIdGrid(dgvDepartamento);
             if (Id > 0)
             {
                 if (MessageBox.Show("Desea Elimnar", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == DialogResult.Yes)

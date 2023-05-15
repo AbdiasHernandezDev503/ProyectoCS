@@ -27,7 +27,7 @@ namespace HospitalMatasanos.LogicaDeNegocio
         {
             return DepartamentoDAL.ObtenerTodos();
         }
-        public static Departamento BuscarPorId(byte pId)
+        public static Departamento BuscarPorId(int pId)
         {
             return DepartamentoDAL.BuscarPorId(pId);
         }
