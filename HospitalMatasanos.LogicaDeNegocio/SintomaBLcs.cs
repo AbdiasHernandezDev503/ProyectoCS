@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace HospitalMatasanos.LogicaDeNegocio
 {
-    public class SintomaBLcs
+    public class SintomaBL
     {
         public static int Guardar(Sintoma pSintoma)
         {
@@ -21,6 +21,21 @@ namespace HospitalMatasanos.LogicaDeNegocio
         public static int Eliminar(Sintoma pSintoma)
         {
             return SintomaDAL.Eliminar(pSintoma);
+        }
+
+        public static Sintoma BuscarPorId(Int32 pId)
+        {
+            return SintomaDAL.BuscarPorId(pId);
+        }
+
+        public static List<Sintoma> ObtenerTodos()
+        {
+            return SintomaDAL.ObtenerTodos();
+        }
+
+        public static List<Sintoma> Buscar(Sintoma pSintoma)
+        {
+            return SintomaDAL.Buscar(pSintoma);
         }
     }
 }
